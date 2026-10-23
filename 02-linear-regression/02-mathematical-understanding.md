@@ -382,10 +382,6 @@ $$
 =\boldsymbol{\beta}_t-\eta\nabla J(\boldsymbol{\beta}_t)
 $$
 
-Where:
-- \(\boldsymbol{\beta}_t\) = parameters at iteration \(t\)
-- \(\eta\) = learning rate
-- \(\nabla J(\boldsymbol{\beta}_t)\) = gradient at the current parameters
 
 For Linear Regression with the SSE objective:
 
