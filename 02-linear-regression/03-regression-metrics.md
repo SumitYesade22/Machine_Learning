@@ -6,10 +6,10 @@ Regression metrics evaluate how accurately a regression model predicts continuou
 
 - \(n\): Number of observations.
 - \(y_i\): Actual value of the \(i\)-th observation.
-- \(\hat{y}_i\): Predicted value of the \(i\)-th observation.
-- \(\bar{y}\): Mean of the actual target values.
+- \(ŷ\): Predicted value of the \(i\)-th observation.
+- \(ȳ\): Mean of the actual target values.
 - \(k\): Number of independent variables (predictors), excluding the intercept.
-- \(\ln\): Natural logarithm.
+- \(ln\): Natural logarithm.
 
 ---
 
@@ -286,8 +286,7 @@ Lower RMSLE indicates smaller log-scale prediction errors. A value of zero indic
 ### Formula
 
 $$
-MedAE = \operatorname{median}
-\left(|y_i-\hat{y}_i|\right)
+MedAE = \mathrm{median}\left(|y_i-\hat{y}_i|\right)
 $$
 
 ### Advantages
@@ -317,14 +316,13 @@ For an even number of observations, the median is typically the average of the t
 ### Formula
 
 $$
-EVS = 1-\frac{\operatorname{Var}(y-\hat{y})}
-{\operatorname{Var}(y)}
+EVS = 1-\frac{\mathrm{Var}(y-\hat{y})}{\mathrm{Var}(y)}
 $$
 
 Where:
 
-- \(\operatorname{Var}(y-\hat{y})\): Variance of the prediction errors.
-- \(\operatorname{Var}(y)\): Variance of the actual target values.
+- $\mathrm{Var}(y-\hat{y})$: Variance of the prediction errors.
+- $\mathrm{Var}(y)$: Variance of the actual target values.
 
 This standard formula assumes the variance of the actual target values is nonzero.
 
