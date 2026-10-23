@@ -159,11 +159,11 @@ $$
 \mathbf{y}=X\boldsymbol{\beta}+\boldsymbol{\varepsilon}
 $$
 
-Where:
-- \(\mathbf{y}\) = vector of actual target values
-- \(X\) = design matrix containing the features
-- \(\boldsymbol{\beta}\) = vector of regression coefficients
-- \(\boldsymbol{\varepsilon}\) = vector of errors
+where
+- $\mathbf{y}$ = vector of actual target values
+- $X$ = design matrix containing the features
+- $\boldsymbol{\beta}$ = vector of regression coefficients
+- $\boldsymbol{\varepsilon}$ = vector of errors
 
 The predictions are:
 
@@ -272,28 +272,12 @@ The uniqueness of the coefficient vector depends on the rank of the design matri
 
 If all columns of \(X\) are linearly independent, then:
 
-$$
-\operatorname{rank}(X)=p
-$$
-
-Where \(p\) is the number of columns in \(X\), including the intercept column if one is used.
-
-In this case, \(X^TX\) is invertible, and the coefficient vector is unique:
-
-$$
-\boxed{
-\hat{\boldsymbol{\beta}}
-=(X^TX)^{-1}X^T\mathbf{y}
-}
-$$
+The solution is unique
 
 ### Case 2: Rank-Deficient Matrix
 
 If one or more columns are linearly dependent, then:
 
-$$
-\operatorname{rank}(X)<p
-$$
 
 Consequently, \(X^TX\) is singular and cannot be inverted.
 
