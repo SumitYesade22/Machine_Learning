@@ -251,8 +251,8 @@ When features contain overlapping information, it becomes difficult to estimate 
 VIF stands for **Variance Inflation Factor**. It measures how much the estimated variance of a regression coefficient is inflated due to the linear relationship between that feature and the other independent features.
 
 Formula:
-$$
-VIF_j = \frac{1}{1 - R_j^2}
+$$ 
+\VIF_j = \frac{1}{1 - R_j^2}
 $$
 
 Where:
