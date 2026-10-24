@@ -56,9 +56,9 @@ Correlated errors do not automatically mean that the coefficients are biased.
 
 In multiple linear regression:
 
-\[
+$$
 Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \epsilon
-\]
+$$
 
 A **t-test** checks whether an individual regression coefficient is statistically different from zero, while keeping the other included features constant.
 
@@ -90,14 +90,15 @@ A **t-test** checks whether an individual regression coefficient is statisticall
 ### 1. What is the Assumption?
 The homoscedasticity assumption states that the error variance remains constant across observations, given the independent variables.
 
-\[
-\operatorname{Var}(\epsilon_i \mid X_i)=\sigma^2
-\]
+$$
+\operatorname{Var}(\epsilon_i \mid X_i) = \sigma^2
+$$
 
 Where:
-- \(\epsilon_i\) represents the error term for observation \(i\).
-- \(X_i\) represents the independent variables for observation \(i\).
-- \(\sigma^2\) represents the constant error variance.
+
+- $\epsilon_i$ represents the error term for observation $i$.
+- $X_i$ represents the independent variables for observation $i$.
+- $\sigma^2$ represents the constant error variance.
 
 If the error variance changes across observations, the assumption is violated. This is called **heteroscedasticity**.
 
@@ -250,15 +251,14 @@ When features contain overlapping information, it becomes difficult to estimate 
 VIF stands for **Variance Inflation Factor**. It measures how much the estimated variance of a regression coefficient is inflated due to the linear relationship between that feature and the other independent features.
 
 Formula:
-
-\[
+$$
 VIF_j = \frac{1}{1 - R_j^2}
-\]
+$$
 
 Where:
 
-- \(VIF_j\) = VIF of feature \(X_j\).
-- \(R_j^2\) = R-squared obtained by regressing \(X_j\) on all the other independent features.
+- $VIF_j$ = VIF of feature $X_j$.
+- $R_j^2$ = R-squared obtained by regressing $X_j$ on all the other independent features.
 
 **Important:** This is a separate regression for each feature. The original target variable is not used to calculate VIF.
 
