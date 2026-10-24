@@ -169,32 +169,34 @@ $$
 
 Here, $n$ represents the total number of training examples.
 
-Gradient with Respect to the Slope
+### Gradient With Respect to the Slope
 
-Differentiate the loss function with respect to $m$:
+Differentiate the loss function with respect to `m`:
 
--\frac{2}{n}\sum_{i=1}^{n}x_i(y_i-\hat{y}_i)
+$$
+\frac{\partial J}{\partial m}
+= -\frac{2}{n}\sum_{i=1}^{n}x_i(y_i-\hat{y}_i)
 $$
 
-Gradient with Respect to the Intercept
+### Gradient With Respect to the Intercept
 
-Differentiate the loss function with respect to $c$:
+Differentiate the loss function with respect to `c`:
 
--\frac{2}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)
+$$
+\frac{\partial J}{\partial c}
+= -\frac{2}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)
 $$
 
-Parameter Updates
+### Parameter Updates
 
 Update both parameters using their respective gradients:
 
-m_{\text{old}}
-
-\eta\frac{\partial J}{\partial m}
+$$
+m_{\text{new}} = m_{\text{old}} - \eta\frac{\partial J}{\partial m}
 $$
 
-c_{\text{old}}
-
-\eta\frac{\partial J}{\partial c}
+$$
+c_{\text{new}} = c_{\text{old}} - \eta\frac{\partial J}{\partial c}
 $$
 
 Key point: Both gradients use all $n$ training examples. The parameters are updated only after the gradients have been calculated.
@@ -287,22 +289,16 @@ $$
 ### Parameter Updates
 
 $$
-m_{\text{new}}
-=
-m_{\text{old}}
--
-\eta\frac{\partial J_i}{\partial m}
+m_{\text{new}} = m_{\text{old}} - \eta\frac{\partial J_i}{\partial m}
 $$
 
 $$
-c_{\text{new}}
-=
-c_{\text{old}}
--
-\eta\frac{\partial J_i}{\partial c}
+c_{\text{new}} = c_{\text{old}} - \eta\frac{\partial J_i}{\partial c}
 $$
 
-Here, $i$ represents the selected training example and $\eta$ is the learning rate.
+Here:
+- \(i\) represents the selected training example.
+- \(\eta\) is the learning rate.
 
 **Important:** These gradients are calculated using one training example, not the entire dataset. The equations above use the squared-error loss for a single example, without the MSE averaging factor $1/n$.
 
@@ -381,7 +377,7 @@ An **epoch** is one complete pass through the training dataset.
 
 Unlike Batch GD, Mini-Batch GD updates the parameters multiple times during one epoch.
 
-3. Mathematical Formulation
+## 3. Mathematical Formulation
 
 For Linear Regression, the prediction equation is:
 
