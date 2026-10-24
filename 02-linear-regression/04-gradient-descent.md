@@ -381,7 +381,7 @@ An **epoch** is one complete pass through the training dataset.
 
 Unlike Batch GD, Mini-Batch GD updates the parameters multiple times during one epoch.
 
-## 3. Mathematical Formulation
+3. Mathematical Formulation
 
 For Linear Regression, the prediction equation is:
 
@@ -389,51 +389,50 @@ $$
 \hat{y}_i = mx_i + c
 $$
 
-Suppose a mini-batch contains $B$ training examples. Its Mean Squared Error (MSE) is:
+Suppose a mini-batch contains (B) training examples. Its Mean Squared Error (MSE) is:
 
 $$
-J_B(m,c)
-=
-\frac{1}{B}\sum_{i \in \mathcal{B}}(y_i-\hat{y}_i)^2
+J_B(m,c) = \frac{1}{B}\sum_{i \in \mathcal{B}}(y_i-\hat{y}_i)^2
 $$
 
 Here:
 
-- $B$ = number of examples in the current mini-batch.
-- $\mathcal{B}$ = set of training-example indices in that mini-batch.
+(B) = Number of training examples in the current mini-batch.
 
-### Gradient With Respect to the Slope
+(\mathcal{B}) = Set of indices of the training examples in that mini-batch.
+
+(y_i) = Actual value.
+
+(\hat{y}_i) = Predicted value.
+
+(m) = Slope (coefficient).
+
+(c) = Intercept.
+
+Gradient With Respect to the Slope
 
 $$
 \frac{\partial J_B}{\partial m}
-=
--\frac{2}{B}\sum_{i \in \mathcal{B}}x_i(y_i-\hat{y}_i)
+= -\frac{2}{B}\sum_{i \in \mathcal{B}}x_i(y_i-\hat{y}_i)
 $$
 
-### Gradient With Respect to the Intercept
+Gradient With Respect to the Intercept
 
 $$
 \frac{\partial J_B}{\partial c}
-=
--\frac{2}{B}\sum_{i \in \mathcal{B}}(y_i-\hat{y}_i)
+= -\frac{2}{B}\sum_{i \in \mathcal{B}}(y_i-\hat{y}_i)
 $$
 
-### Parameter Updates
+Parameter Updates
+
+After calculating the gradients using the current mini-batch, update the parameters as follows:
 
 $$
-m_{\text{new}}
-=
-m_{\text{old}}
--
-\eta\frac{\partial J_B}{\partial m}
+m_{\text{new}} = m_{\text{old}} - \eta\frac{\partial J_B}{\partial m}
 $$
 
 $$
-c_{\text{new}}
-=
-c_{\text{old}}
--
-\eta\frac{\partial J_B}{\partial c}
+c_{\text{new}} = c_{\text{old}} - \eta\frac{\partial J_B}{\partial c}
 $$
 
 Here, $\eta$ is the learning rate.
