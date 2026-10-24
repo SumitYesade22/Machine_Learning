@@ -57,19 +57,21 @@ Correlated errors do not automatically mean that the coefficients are biased.
 In multiple linear regression:
 
 \[
-Y=\beta_0+\beta_1X_1+\beta_2X_2+\epsilon
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \epsilon
 \]
 
-A t-test checks whether an individual coefficient is statistically different from zero.
+A **t-test** checks whether an individual regression coefficient is statistically different from zero, while keeping the other included features constant.
 
-For example, for the number of bedrooms:
+**Example:** Suppose we want to check whether the number of bedrooms significantly affects house prices after accounting for area.
 
-- \(H_0:\beta_2=0\) — the coefficient for bedrooms is zero.
-- \(H_1:\beta_2\neq0\) — the coefficient is nonzero.
+- **Null hypothesis (\(H_0\)):** \(\beta_2 = 0\) — The number of bedrooms has no independent linear effect on the predicted price, holding area constant.
+- **Alternative hypothesis (\(H_1\)):** \(\beta_2 \neq 0\) — The coefficient for bedrooms is nonzero, holding area constant.
 
-A zero coefficient means **no linear effect within the specified model**, holding the other included features constant. It does not necessarily mean there is no relationship of any kind; a nonlinear effect may still exist.
+**Interpretation:**
+- If the p-value is less than the significance level (e.g., 0.05), reject the null hypothesis.
+- If the p-value is greater than or equal to 0.05, fail to reject the null hypothesis.
 
-If errors are correlated and the usual standard error formula is used, the resulting t-statistic and p-value may be unreliable.
+**Important:** Statistical significance does not establish causation, and a nonsignificant coefficient does not prove that the feature has no relationship with the target.
 
 ### 5. Simple vs. Multiple Linear Regression
 
@@ -86,14 +88,18 @@ If errors are correlated and the usual standard error formula is used, the resul
 ## 3. Homoscedasticity (Constant Variance of Errors)
 
 ### 1. What is the Assumption?
-
-Homoscedasticity means that the variance of errors should remain approximately constant across different values of the predictors or fitted values.
+The homoscedasticity assumption states that the error variance remains constant across observations, given the independent variables.
 
 \[
-\operatorname{Var}(\epsilon_i\mid X_i)=\sigma^2
+\operatorname{Var}(\epsilon_i \mid X_i)=\sigma^2
 \]
 
-Here, \(\epsilon_i\) represents the error for observation \(i\), and \(\sigma^2\) represents the constant error variance.
+Where:
+- \(\epsilon_i\) represents the error term for observation \(i\).
+- \(X_i\) represents the independent variables for observation \(i\).
+- \(\sigma^2\) represents the constant error variance.
+
+If the error variance changes across observations, the assumption is violated. This is called **heteroscedasticity**.
 
 ### 2. Example
 
@@ -246,7 +252,7 @@ VIF stands for **Variance Inflation Factor**. It measures how much the estimated
 Formula:
 
 \[
-VIF_j=\frac{1}{1-R_j^2}
+VIF_j = \frac{1}{1 - R_j^2}
 \]
 
 Where:
@@ -302,9 +308,9 @@ Always consider domain knowledge, the objective of the analysis, and model perfo
 ### What Does It Mean?
 The zero conditional mean assumption states that the expected value of the error term, given the independent variables, must be zero.
 
-\[
-E(\varepsilon\mid X)=0
-\]
+$$
+E(\varepsilon \mid X) = 0
+$$
 
 **Purpose:** It helps ensure that OLS coefficient estimates are unbiased, provided the other required conditions are satisfied.
 
