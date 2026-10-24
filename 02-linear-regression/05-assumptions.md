@@ -91,7 +91,7 @@ A **t-test** checks whether an individual regression coefficient is statisticall
 The homoscedasticity assumption states that the error variance remains constant across observations, given the independent variables.
 
 $$
-\operatorname{Var}(\epsilon_i \mid X_i) = \sigma^2
+{Var}(\epsilon_i \mid X_i) = \sigma^2
 $$
 
 Where:
