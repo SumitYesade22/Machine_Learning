@@ -12,7 +12,8 @@ The linearity assumption states that the expected value of the target variable h
 - Plot each input feature against the target individually for an initial visual check.
 - Individual plots are not sufficient because they do not account for the effects of other features.
 - Check residual plots against fitted values to identify possible nonlinear patterns in the combined model.
-- Use partial residual plots when needed to investigate individual feature effects while accounting for other features.
+- Use partial residual plots when needed to investigate individual feature effects while accounting for other features.Here as the individual effect of the features is hard to determine , we use the formula as residual = predicted - error + B*feature and plot the graph , if that graph is linear or straight line than the assumption is satisfied
+
 
 ### What If Linearity Is Violated?
 
