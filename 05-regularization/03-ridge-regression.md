@@ -122,6 +122,8 @@ Different implementations may use different scaling conventions for MSE and the 
 Therefore, the numerical value of `lambda` is dependent on the convention used in the objective function.
 
 ---
+![ridge](images/ridge.png)
+
 
 ## 4. How Ridge Regression Shrinks Coefficients
 

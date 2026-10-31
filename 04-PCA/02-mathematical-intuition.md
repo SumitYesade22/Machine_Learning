@@ -474,7 +474,7 @@ For example, we may retain the smallest number of components that explain 95% of
 
 ---
 
-![mathematical intuition](C:\Users\SUMIT\Desktop\Machine_learning\images\pca.png)
+![PCA](images/pca.png)
 
 ### One-line conclusion
 
