@@ -1,0 +1,5 @@
+- maximal margin classifier - hard margin svm 
+- soft margin svm - support margin classifier - linear data
+- svm - non linear data - kernels
+- svm for multiclass 
+- svr for regression ps
