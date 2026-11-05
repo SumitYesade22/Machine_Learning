@@ -113,6 +113,9 @@ For SW:
 
 Therefore, SL contributed 80% of the total impurity reduction, while SW contributed 20%.
 
+## permutation importance 
+
+Permutation Importance is a model inspection technique used to measure how much a trained model depends on each feature for predictions. It calculates performance on the test data, then shuffles one feature at a time while keeping others unchanged, and checks how much performance drops. A bigger drop means the model relies more on that feature. This is usually repeated multiple times and averaged to reduce randomness. Correlated features can make importance misleadingly low because other correlated features may compensate for the shuffled feature.
 ---
 
 ## 5. Interpretation of Feature Importance
