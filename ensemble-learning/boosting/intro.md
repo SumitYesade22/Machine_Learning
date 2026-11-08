@@ -1,0 +1,1 @@
+**Boosting** is an ensemble learning technique in which multiple weak learners (typically high-bias models) are trained sequentially. Each subsequent learner focuses on correcting the errors or weaknesses of the existing ensemble. Their predictions are combined to progressively improve the overall model's performance and move closer to the actual target values.
